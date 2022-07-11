@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -6,6 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -17,11 +19,13 @@ public class TestTest {
     @Mock
     private List<String> listMock;
 
+
+
     @DisplayName("Dies ist ein einfacher Test")
     @Test
     public void simpleTest() {
-        var value = 10;
-        var expected = 10;
+        int value = 10;
+        int expected = 10;
 
         assertThat(value).isEqualTo(expected );
     }
@@ -29,10 +33,10 @@ public class TestTest {
     @DisplayName("Dies ist ein einfacher Test für eine Liste")
     @Test
     public void simpleListTest() {
-        var liste = List.of("eins", "zwei", "drei", "vier");
+        List<String> liste = Arrays.asList("eins", "zwei", "drei", "vier");
 
-        assertThat(liste).isNotNull().isNotEmpty();
-        assertThat(liste).containsOnly("eins", "zwei", "drei");
+        assertThat(liste).isNotNull().isNotEmpty().containsOnly("eins", "zwei", "drei");
+
     }
 
 

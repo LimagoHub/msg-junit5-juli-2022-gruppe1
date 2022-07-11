@@ -1,13 +1,11 @@
 
-4
-java:S5786"Remove this 'public' modifier.(‚¦õÔ
-4
-java:S5786"Remove this 'public' modifier.(ÂÿÞö
-4
-java:S5786)"Remove this 'public' modifier.(ºÃõô
-9
-java:S5786"Remove this 'public' modifier.(ÏŸÒ¾ýÿÿÿÿ
-Y
-java:S5853"">Join these multiple assertions subject to one assertion chain.(£‹ öýÿÿÿÿ
-M
-java:S5838-"2Use assertThat(actual).contains(expected) instead.(þ» Óÿÿÿÿÿ
+;
+java:S5786"Remove this 'public' modifier.(‚¦õÔ8³®ñáž0
+;
+java:S5786#"Remove this 'public' modifier.(ÂÿÞö8³®ñáž0
+;
+java:S5786-"Remove this 'public' modifier.(ºÃõô8³®ñáž0
+@
+java:S5786"Remove this 'public' modifier.(ÏŸÒ¾ýÿÿÿÿ8´®ñáž0
+T
+java:S58381"2Use assertThat(actual).contains(expected) instead.(þ» Óÿÿÿÿÿ8¶®ñáž0
