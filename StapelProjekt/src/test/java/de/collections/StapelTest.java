@@ -42,6 +42,8 @@ class StapelTest {
         void isIsfull_vollerStack_returnsTrue() throws StapelException {
             // Arrange
 
+
+
             for (int i = 0; i < 10; i++)
                 objectUnderTest.push(0);
 
