@@ -1,6 +1,7 @@
 package de.msg.webapp.services.inner;
 
 import de.msg.webapp.repositories.PersonenRepository;
+import de.msg.webapp.repositories.entities.PersonEntity;
 import de.msg.webapp.services.PersonenService;
 import de.msg.webapp.services.PersonenServiceException;
 import de.msg.webapp.services.mapper.PersonMapper;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -72,6 +74,26 @@ class PersonenServiceImplTest {
             assertEquals("Antipath", ex.getMessage());
 
             verify(blacklistMock, times(1)).contains("John");
+        }
+
+        @Test
+        @DisplayName("Person ist Antipath und sollte PersonenServiceException mit Meldung Bla, bla auslösen")
+        void happyDay() throws PersonenServiceException {
+            Person valid = Person.builder().id("1").vorname("John").nachname("Doe").build();
+
+
+            // Recordmode
+            when(blacklistMock.contains(anyString())).thenReturn(false);
+
+
+            // Replay
+            objectUnderTest.speichern(valid);
+            InOrder inOrder = inOrder(blacklistMock, mapperMock);
+
+
+            inOrder.verify(blacklistMock, times(1)).contains("John");
+            inOrder.verify(mapperMock, times(1)).convert(valid);
+
         }
     }
 

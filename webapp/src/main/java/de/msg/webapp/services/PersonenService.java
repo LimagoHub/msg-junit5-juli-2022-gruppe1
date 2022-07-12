@@ -7,6 +7,7 @@ import java.util.Optional;
 public interface PersonenService {
 
     public boolean speichern(Person person) throws PersonenServiceException ;
+    public boolean speichern(String id, String vorname, String nachname) throws PersonenServiceException ;
     default boolean loeschen(Person person) throws PersonenServiceException{
         return loeschen(person.getId());
     }

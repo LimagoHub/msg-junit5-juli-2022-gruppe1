@@ -9,6 +9,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
@@ -94,6 +96,16 @@ class StapelTest {
 
     @Test
     void sinnlos() {
+
+        new MockUp<UUID>() {
+            @mockit.Mock
+            public String toString() {
+                return "1234";
+            }
+        };
+        String s = UUID.randomUUID().toString();
+        assertThat(s).isEqualTo("1234");
+
 
         new MockUp<Bar>() {
             @mockit.Mock
