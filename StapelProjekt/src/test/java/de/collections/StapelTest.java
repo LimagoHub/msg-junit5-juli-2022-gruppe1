@@ -1,5 +1,6 @@
 package de.collections;
 
+import mockit.MockUp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -15,8 +16,6 @@ import static org.assertj.core.api.Assertions.*;
 class StapelTest {
 
     @InjectMocks private Stapel objectUnderTest;
-
-
 
 
     @Nested
@@ -55,4 +54,62 @@ class StapelTest {
         }
 
     }
+
+    @Nested
+    class PushMethodTests {
+        @Test
+        @DisplayName("Gegeben ist ein voller Stapel. Wenn isFull aufgerufen wird sollte die Methode true zurück geben")
+        void push_overflow_throwsStapelException_and_message () throws StapelException{
+            // Arrange
+
+
+
+            for (int i = 0; i < 10; i++)
+                objectUnderTest.push(0);
+
+            // Act + Assertion
+            StapelException ex = assertThrows(StapelException.class , ()->objectUnderTest.push(0));
+
+            assertThat("Overflow").isEqualTo(ex.getMessage());
+
+
+        }
+
+        @Test
+        @DisplayName("Gegeben ist ein voller Stapel. Wenn isFull aufgerufen wird sollte die Methode true zurück geben")
+        void push_fillUpToLimit_throwsStapelException_and_message () throws StapelException{
+            // Arrange
+
+
+
+            for (int i = 0; i < 9; i++)
+                objectUnderTest.push(0);
+
+
+            assertDoesNotThrow(()->objectUnderTest.push(0));
+
+        }
+
+    }
+
+    @Test
+    void sinnlos() {
+
+        new MockUp<Bar>() {
+            @mockit.Mock
+            public long currentTimeMillis() {
+                return 1000;
+            }
+        };
+
+        assertThat(Bar.currentTimeMillis()).isEqualTo(1000);
+    }
+
+
+    static class Bar {
+        public static long currentTimeMillis() {
+            return 5;
+        }
+    }
+
 }
