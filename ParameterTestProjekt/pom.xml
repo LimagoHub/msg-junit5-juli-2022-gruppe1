@@ -5,15 +5,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>BlankProjekt</artifactId>
+  <artifactId>ParameterTestProjekt</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>BlankProjekt</name>
+  <name>ParameterTestProjekt</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jupiter-version>5.8.1</jupiter-version>
     <java.version>11</java.version>
   </properties>
 
@@ -21,7 +22,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.8.1</version>
+      <version>${jupiter-version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -39,7 +40,7 @@
     <dependency>
       <groupId>org.junit.vintage</groupId>
       <artifactId>junit-vintage-engine</artifactId>
-      <version>5.8.1</version>
+      <version>${jupiter-version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -55,7 +56,12 @@
       <version>3.23.1</version>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${jupiter-version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
