@@ -11,7 +11,14 @@ import java.util.List;
 public class BlacklistConfig {
 
     @Bean
-    public List<String> antipathen() {
+    @Qualifier("blackList")
+    public List<String> blackList() {
         return List.of("Attila","Peter","Paul","Mary");
+    }
+
+    @Bean
+    @Qualifier("fruits")
+    public List<String> fruits() {
+        return List.of("Banana","Cherry","Strawberry","Apple");
     }
 }

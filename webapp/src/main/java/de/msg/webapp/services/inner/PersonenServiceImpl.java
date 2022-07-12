@@ -6,6 +6,7 @@ import de.msg.webapp.services.PersonenServiceException;
 import de.msg.webapp.services.mapper.PersonMapper;
 import de.msg.webapp.services.models.Person;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +26,7 @@ public class PersonenServiceImpl implements PersonenService {
 
     private final List<String> blackList;
 
-    public PersonenServiceImpl(PersonenRepository repo, PersonMapper mapper, List<String> blackList) {
+    public PersonenServiceImpl(PersonenRepository repo, PersonMapper mapper, @Qualifier("blackList") List<String> blackList) {
         this.repo = repo;
         this.mapper = mapper;
         this.blackList = blackList;
