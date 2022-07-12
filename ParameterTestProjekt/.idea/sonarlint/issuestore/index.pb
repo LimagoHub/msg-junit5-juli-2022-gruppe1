@@ -1,23 +1,9 @@
 
-K
-src/test/java/TestTest.java,2\5\253a6f5fe95e3c73593cb9a299c7a3fe9ef329dc
 R
 "src/main/java/org/example/App.java,2\6\268b09d2a5cdab7d148f0ec91f7b3fb51601410d
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-h
-8src/main/java/de/msg/game/player/AbstractGamePlayer.java,8\b\8be140b8782df5de2ea10bcc2c1cd53785e0ecdb
-u
-Esrc/main/java/de/msg/game/takegame/player/AbstractTakeGamePlayer.java,7\d\7d2893ad2b0f359c384512e4b19a9859d294cf3f
-m
-=src/main/java/de/msg/game/takegame/player/ComputerPlayer.java,7\d\7d5ae591d4ebe1ec12f874bece3b0f664190b755
 [
 +src/main/java/de/msg/io/ConsolenWriter.java,d\3\d37a835d1f32d12697b3300b1fadffbbdc24202b
 `
 0src/main/java/de/msg/game/player/GamePlayer.java,7\7\7784051fc66067578b43e7da333206e4ef52be43
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 S
 #src/main/java/de/msg/io/Writer.java,e\5\e5f31c2db1ef0519a398cad459adea8489660406
-q
-Asrc/test/java/de/msg/game/takegame/player/ComputerPlayerTest.java,7\a\7ad8f9940f2688f7605c0e0ec4724c330e8f4501
